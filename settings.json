@@ -1,0 +1,12 @@
+﻿{
+  "displayIndex": 1,
+  "glazeMonitorIndex": 1,
+  "idleSeconds": 180,
+  "pollSeconds": 0.5,
+  "glazePollSeconds": 3,
+  "offValue": 4,
+  "keepAwakeWorkspaces": [2, 4, 6, 8, 10],
+  "wakeOnFocus": true,
+  "wakeOnMouseEnter": true
+}
+
