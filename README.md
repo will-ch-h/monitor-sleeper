@@ -63,20 +63,21 @@ this program, open the monitor menu. Then set DDC/CI to on.
 6. Set `displayIndex` to the index from step 3.
 7. Set `glazeMonitorIndex` to the index from step 4.
 8. Set `idleSeconds` to the time in seconds before the monitor goes into standby.
-9. Set `keepAwakeWorkspaces` to the workspaces that must keep the monitor on (when an app is present within the focused workspace):
+9. Set `keepAwakeWorkspaces` to the workspaces that must keep the monitor on (when an app is present within the focused workspace).
+     **To make this easier, each workspace should be assigned a monitor in the GlazeWM Config file (Ex: I have my even workspaces set to my secondary monitor)**:
 
    ```json
    "keepAwakeWorkspaces": [2, 4, 6, 8, 10]
    ```
 
-   The program compares the names as text. Thus names of letters are also permitted:
+   names are also permitted:
 
    ```json
    "keepAwakeWorkspaces": ["chat", "mail"]
    ```
 
-10. Save the file.
-11. Run this command to examine the settings:
+11. Save the file.
+12. Run this command to examine the settings:
 
     ```powershell
     .\monitor-sleeper.ps1 -Test
@@ -85,13 +86,11 @@ this program, open the monitor menu. Then set DDC/CI to on.
     The program prints its decisions. It does not change the monitor in this mode. Push
     `Ctrl+C` to stop the program.
 
-12. Run this command to start the program:
+13. Run this command to start the program:
 
     ```powershell
     .\monitor-sleeper.ps1
     ```
-
-    An icon of a monitor comes into view in the notification area.
 
 ## Automatic start
 
@@ -164,7 +163,7 @@ This value replaces the value at the top level for that monitor only.
 ]
 ```
 
-The program sends one `glazewm` command for all the monitors. Thus more monitors do not make
+The program sends one `glazewm` command for all the monitors. This makes sure that more monitors do not make
 the program slower.
 
 ## Settings
@@ -223,7 +222,7 @@ The program writes only one DDC/CI value: `0xD6`, the power state. The monitor d
 this value in its memory. Windows uses the same mechanism for its display timeout. Thus you
 can use this program continuously.
 
-## Known limits
+## Known Issues
 
 - Some monitors do not obey a DDC/CI standby command that comes from software. If your
   monitor stays on, set `offValue` to `5`.
