@@ -228,7 +228,7 @@ can use this program continuously.
   monitor stays on, set `offValue` to `5`.
 - Some monitors do not accept DDC/CI commands while they are in standby. If your monitor does
   not come on again, move the mouse pointer, or use the monitor power button.
-- If windows screen saver is configured. When entering screen saver, the secondary monitor will turn back on (and display the screensaver). - I honestly don't hate this.
+- When entering a screen saver, the secondary monitor will turn back on (and display the screensaver). - I honestly don't hate this.
 
 ----------------
 Engineered with Anthropic's Opus 5 Model
